@@ -1,0 +1,26 @@
+{
+    "name": "extphp/xml-to-json",
+    "description": "An XML to JSON converter that will properly preserve attributes.",
+    "type": "library",
+    "keywords": ["xml", "json", "converter"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bogdan Cismariu",
+            "email": "bogdan.cismariu@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": ">=5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ExtPHP\\XmlToJson\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    }
+}
