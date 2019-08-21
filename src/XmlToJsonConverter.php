@@ -6,6 +6,10 @@ namespace ExtPHP\XmlToJson;
 
 class XmlToJsonConverter
 {
+
+    protected $attributesKey    = '_attribute';
+    protected $valueKey         = '_value';
+
     public function __construct(\SimpleXMLElement $xml)
     {
         $this->xml = $xml;
@@ -19,12 +23,12 @@ class XmlToJsonConverter
 
             if (0 !== count($attributes)) {
                 foreach ($attributes as $attrName => $attrValue) {
-                    $collection['attributes'][$attrName] = strval($attrValue);
+                    $collection[$this->attributesKey][$attrName] = strval($attrValue);
                 }
             }
 
             if (0 === $nodes->count()) {
-                $collection['value'] = strval($xml);
+                $collection[$this->valueKey] = strval($xml);
                 return $collection;
             }
 
@@ -48,5 +52,15 @@ class XmlToJsonConverter
     public function toJson(int $options = 0, int $depth = 512)
     {
         return json_encode($this->toArray(), $options, $depth);
+    }
+
+    public function setAttributesKey($key = '')
+    {
+        $this->attributesKey = $key;
+    }
+
+    public function setValueKey($key = '')
+    {
+        $this->valueKey = $key;
     }
 }

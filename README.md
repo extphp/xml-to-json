@@ -27,7 +27,7 @@ $converter->toArray();      // convert xml to array
 $converter->toJson();       // convert xml to json
 ```
 
-A quick approach when you need to convert a XML string to json.
+A quick approach when you need to convert a XML string to array or json.
 
 ```php
 use ExtPHP\XmlToJson\JsonableXML;
