@@ -33,6 +33,9 @@ A quick approach when you need to convert a XML string to array or json.
 use ExtPHP\XmlToJson\JsonableXML;
 
 $xml = new JsonableXML('<node attr1="value1" attr2="value2"><child>child value</child></node>');
+json_encode($xml);      // convert xml to json
+
+// These methods are also available directly on the xml object.
 $xml->toArray();        // convert xml to array
 $xml->toJson();         // convert xml to json
 ```
