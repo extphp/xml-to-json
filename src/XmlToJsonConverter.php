@@ -7,7 +7,7 @@ namespace ExtPHP\XmlToJson;
 class XmlToJsonConverter
 {
 
-    protected $attributesKey    = '_attribute';
+    protected $attributesKey    = '_attributes';
     protected $valueKey         = '_value';
 
     public function __construct(\SimpleXMLElement $xml)
